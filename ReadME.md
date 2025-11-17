@@ -84,7 +84,17 @@ Hyperparameter tuning table (template)
 
 
 
-[Nhial_exp (2).xlsx](https://github.com/user-attachments/files/23588832/Nhial_exp.2.xlsx)
+MEMBER NAME	Policy	Learning Rate	Gamma	Batch Size	Eps Start	Eps End	Eps Decay	Mean Reward	Std Dev	Random Baseline	Improvement	Noted Behavior
+Nhial Majok	CNNPolicy	0.0001	0.990	8	1.0	0.05	0.30	275.00	182.28	101.50	173.50	Observations (Mean Reward: 275.00 ± 182.28, Random Baseline: 101.50, Improvement: 173.50). Analysis: Strong improvement but high variance (±182.28). The small batch size (8) combined with a moderate learning rate results in an unstable but ultimately successful learning trajectory.
+Nhial Majok	CNNPolicy	0.0005	0.950	16	1.0	0.10	0.20	407.00	247.00	143.75	263.25	Observations (Mean Reward: 407.00 ± 247.00, Random Baseline: 143.75, Improvement: 263.25). Analysis: Achieved the highest mean reward but suffered the highest variance (±247.00). The high learning rate (lr=0.0005) likely caused aggressive updates, resulting in high potential but poor stability.
+Nhial Majok	CNNPolicy	0.0002	0.990	8	1.0	0.01	0.40	259.50	85.19	130.75	128.75	Observations (Mean Reward: 259.50 ± 85.19, Random Baseline: 130.75, Improvement: 128.75). Analysis: Moderate stability and performance. The high γ (0.99) promotes good long-term planning, but the small batch size (8) prevents convergence to a perfectly stable policy.
+Nhial Majok	CNNPolicy	0.0003	0.999	12	1.0	0.08	0.25	285.00	0.00	124.00	161.00	Observations (Mean Reward: 285.00 ± 0.00, Random Baseline: 124.00, Improvement: 161.00). Analysis: Excellent stability (±0.00). The near-perfect discount factor (γ=0.999) and balanced learning rate result in a reliable, robust policy.
+Nhial Majok	CNNPolicy	0.00015	0.980	8	1.0	0.02	0.35	227.00	46.05	142.50	84.50	Observations (Mean Reward: 227.00 ± 46.05, Random Baseline: 142.50, Improvement: 84.50). Analysis: Solid improvement, but slightly limited by the conservative learning rate and lower γ.
+Nhial Majok	MLPPolicy	0.0001	0.990	8	1.0	0.05	0.30	50.00	0.00	181.00	-131.00	Observations (Mean Reward: 50.00 ± 0.00, Random Baseline: 181.00, Improvement: -131.00). Analysis: Complete failure. The MLP architecture is unable to process the spatial features of Atari pixel data, leading to performance significantly worse than a random agent.
+Nhial Majok	MLPPolicy	0.0005	0.950	16	1.0	0.10	0.20	236.00	33.23	148.75	87.25	Observations (Mean Reward: 236.00 ± 33.23, Random Baseline: 148.75, Improvement: 87.25). Analysis: Surprisingly successful for an MLP. The larger batch size (16) provides stability, allowing the higher learning rate (lr=0.0005) to converge to a decent local maximum.
+Nhial Majok	MLPPolicy	0.0002	0.990	8	1.0	0.01	0.40	285.00	0.00	174.00	111.00	Observations (Mean Reward: 285.00 ± 0.00, Random Baseline: 174.00, Improvement: 111.00). Analysis: Perfect stability (±0.00). The combination of γ=0.99 and a low ϵend ensures the agent exploits its learned policy consistently.
+Nhial Majok	MLPPolicy	0.0003	0.999	12	1.0	0.08	0.25	285.00	0.00	124.00	161.00	Observations (Mean Reward: 285.00 ± 0.00, Random Baseline: 124.00, Improvement: 161.00). Analysis: Highest MLP improvement and perfect stability. The high γ (0.999) is the key stabilizing factor.
+Nhial Majok	MLPPolicy	0.00015	0.980	8	1.0	0.02	0.35	227.00	46.05	142.50	84.50	Observations (Mean Reward: 227.00 ± 46.05, Random Baseline: 142.50, Improvement: 84.50). Analysis: Matches the CNN result, showing that the MLP's failure is not universal, but is dependent on the hyperparameter set.
 
 
 Playing / Evaluation (play.py)
