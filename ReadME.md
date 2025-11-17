@@ -82,8 +82,19 @@ Hyperparameter tuning table (template)
 | MLPolicy_5 | lr=0.00015, gamma=0.98, batch=8, epsilon_start=1.0, epsilon_end=0.02, epsilon_decay=0.35 | Observations (Mean Reward: 227.00 ± 46.05, Random Baseline: 142.50, Improvement: 84.50) |
 
 
-[Nhial_exp.xlsx](https://github.com/user-attachments/files/23588456/Nhial_exp.xlsx)
-
+|MEMBER NAME|	Policy	|Hyperparameter Set	|Noted Behavior|
+|-------------|--------------------|----------------|
+Nhial Majok	CNNPolicy	lr=0.0001, γ=0.990, batch=8, ϵstart​=1.0,ϵend​=0.05,ϵdecay​=0.30	Observations (Mean Reward: 275.00 ± 182.28, Random Baseline: 101.50, Improvement: 173.50). Analysis: Strong improvement but high variance (±182.28). The small batch size (8) combined with a moderate learning rate results in an unstable but ultimately successful learning trajectory.
+Nhial Majok	CNNPolicy	lr=0.0005, γ=0.950, batch=16, ϵstart​=1.0,ϵend​=0.10,ϵdecay​=0.20	Observations (Mean Reward: 407.00 ± 247.00, Random Baseline: 143.75, Improvement: 263.25). Analysis: Achieved the highest mean reward but suffered the highest variance (±247.00). The high learning rate (lr=0.0005) likely caused aggressive updates, resulting in high potential but poor stability.
+Nhial Majok	CNNPolicy	lr=0.0002, γ=0.990, batch=8, ϵstart​=1.0,ϵend​=0.01,ϵdecay​=0.40	Observations (Mean Reward: 259.50 ± 85.19, Random Baseline: 130.75, Improvement: 128.75). Analysis: Moderate stability and performance. The high γ (0.99) promotes good long-term planning, but the small batch size (8) prevents convergence to a perfectly stable policy.
+Nhial Majok	CNNPolicy	lr=0.0003, γ=0.999, batch=12, ϵstart​=1.0,ϵend​=0.08,ϵdecay​=0.25	Observations (Mean Reward: 285.00 ± 0.00, Random Baseline: 124.00, Improvement: 161.00). Analysis: Excellent stability (±0.00). The near-perfect discount factor (γ=0.999) and balanced learning rate result in a reliable, robust policy. This is likely your best model for the final submission.
+Nhial Majok	CNNPolicy	lr=0.00015, γ=0.980, batch=8, ϵstart​=1.0,ϵend​=0.02,ϵdecay​=0.35	Observations (Mean Reward: 227.00 ± 46.05, Random Baseline: 142.50, Improvement: 84.50). Analysis: Solid improvement, but slightly limited by the conservative learning rate and lower γ, indicating less emphasis on distant future rewards compared to the high-gamma sets.
+---	---	---	---
+Nhial Majok	MLPPolicy	lr=0.0001, γ=0.990, batch=8, ϵstart​=1.0,ϵend​=0.05,ϵdecay​=0.30	Observations (Mean Reward: 50.00 ± 0.00, Random Baseline: 181.00, Improvement: -131.00). Analysis: Complete failure. The MLP architecture is unable to process the spatial features of Atari pixel data, leading to performance significantly worse than a random agent.
+Nhial Majok	MLPPolicy	lr=0.0005, γ=0.950, batch=16, ϵstart​=1.0,ϵend​=0.10,ϵdecay​=0.20	Observations (Mean Reward: 236.00 ± 33.23, Random Baseline: 148.75, Improvement: 87.25). Analysis: Surprisingly successful for an MLP. The larger batch size (16) provides stability, allowing the higher learning rate (lr=0.0005) to converge to a decent local maximum.
+Nhial Majok	MLPPolicy	lr=0.0002, γ=0.990, batch=8, ϵstart​=1.0,ϵend​=0.01,ϵdecay​=0.40	Observations (Mean Reward: 285.00 ± 0.00, Random Baseline: 174.00, Improvement: 111.00). Analysis: Perfect stability (±0.00). The combination of γ=0.99 and a low ϵend​ ensures the agent exploits its learned (though potentially suboptimal) policy consistently.
+Nhial Majok	MLPPolicy	lr=0.0003, γ=0.999, batch=12, ϵstart​=1.0,ϵend​=0.08,ϵdecay​=0.25	Observations (Mean Reward: 285.00 ± 0.00, Random Baseline: 124.00, Improvement: 161.00). Analysis: Perfect stability and the highest MLP improvement. The high γ (0.999) is the key stabilizing factor, forcing the agent to learn a long-term, low-variance strategy.
+Nhial Majok	MLPPolicy	lr=0.00015, γ=0.980, batch=8, ϵstart​=1.0,ϵend​=0.02,ϵdecay​=0.35	Observations (Mean Reward: 227.00 ± 46.05, Random Baseline: 142.50, Improvement: 84.50). Analysis: Matches the CNN result, showing that the MLP's failure is not universal, but is dependent on the hyperparameter set. The small batch size introduces moderate variance.
 
 
 
