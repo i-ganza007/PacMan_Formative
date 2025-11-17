@@ -116,7 +116,7 @@ Logging and Visualization
 
 Video Playing
 -----------------------
-
+https://drive.google.com/file/d/1X3I3OAWVz4nVx5YXdEe3eLiK44Jp1-7J/view?usp=sharing
 
 Tips for Reproducibility
 ------------------------
