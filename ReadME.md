@@ -82,6 +82,7 @@ Hyperparameter tuning table (template)
 | MLPolicy_5 | lr=0.00015, gamma=0.98, batch=8, epsilon_start=1.0, epsilon_end=0.02, epsilon_decay=0.35 | Observations (Mean Reward: 227.00 ± 46.05, Random Baseline: 142.50, Improvement: 84.50) |
 
 
+
 Playing / Evaluation (play.py)
 ------------------------------
 Main responsibilities for play.py:
