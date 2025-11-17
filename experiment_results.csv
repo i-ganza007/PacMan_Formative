@@ -1,2 +1,0 @@
-Config_ID,Learning_Rate,Gamma,Batch_Size,Eps_Start,Eps_End,Eps_Decay,Random_Baseline,Mean_Reward,Std_Reward,Model_Name
-3,0.0002,0.9,8,1.0,0.01,0.4,120.25,168.0,67.34983296193094,dqn_model
