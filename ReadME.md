@@ -81,9 +81,21 @@ Hyperparameter tuning table (template)
 | MLPolicy_4 | lr=0.0003, gamma=0.999, batch=12, epsilon_start=1.0, epsilon_end=0.08, epsilon_decay=0.25 | Observations (Mean Reward: 285.00 ± 0.00,Random Baseline: 124.00, Improvement: 161.00) |
 | MLPolicy_5 | lr=0.00015, gamma=0.98, batch=8, epsilon_start=1.0, epsilon_end=0.02, epsilon_decay=0.35 | Observations (Mean Reward: 227.00 ± 46.05, Random Baseline: 142.50, Improvement: 84.50) |
 
+Hyperparameter Tuning Results: Nhial Majok
 
 
-
+| Policy | Learning Rate (lr) | Gamma (γ) | Batch Size | Mean Reward | Std Dev | Improvement | Noted Behavior |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| CNNPolicy | 0.0001 | 0.990 | 8 | 275.00 | 182.28 | 173.50 | Strong improvement but high variance (±182.28), suggesting unstable learning. |
+| CNNPolicy | 0.0005 | 0.950 | 16 | 407.00 | 247.00 | 263.25 | Achieved the highest mean reward but with the highest variance (±247.00). |
+| CNNPolicy | 0.0002 | 0.990 | 8 | 259.50 | 85.19 | 128.75 | Moderate stability. High $\gamma$ (0.99) promotes good long-term planning. |
+| CNNPolicy | 0.0003 | 0.999 | 12 | 285.00 | 0.00 | 161.00 | Excellent stability ($\pm 0.00$). The near-perfect discount factor ($\gamma=0.999$) is critical. |
+| CNNPolicy | 0.00015 | 0.980 | 8 | 227.00 | 46.05 | 84.50 | Solid improvement, limited by conservative learning rate and lower $\gamma$. |
+| MLPPolicy | 0.0001 | 0.990 | 8 | 50.00 | 0.00 | -131.00 | Complete failure. Performance significantly worse than a random agent. |
+| MLPPolicy | 0.0005 | 0.950 | 16 | 236.00 | 33.23 | 87.25 | Surprisingly successful for an MLP. Larger batch size (16) provides stability. |
+| MLPPolicy | 0.0002 | 0.990 | 8 | 285.00 | 0.00 | 111.00 | Perfect stability ($\pm 0.00$). The high $\gamma$ (0.99) is the dominant stabilizing factor. |
+| MLPPolicy | 0.0003 | 0.999 | 12 | 285.00 | 0.00 | 161.00 | Highest MLP improvement and perfect stability ($\pm 0.00$). |
+| MLPPolicy | 0.00015 | 0.980 | 8 | 227.00 | 46.05 | 84.50 | Matches the CNN result, with moderate variance introduced by the small batch size. |
 
 
 Playing / Evaluation (play.py)
