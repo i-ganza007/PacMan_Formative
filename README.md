@@ -1,6 +1,9 @@
 
 # Space_Invaders — DQN with Stable Baselines3 and Gymnasium
 
+Video Playing
+-----------------------
+https://drive.google.com/file/d/1X3I3OAWVz4nVx5YXdEe3eLiK44Jp1-7J/view?usp=sharing
 Overview
 --------
 This repository contains an assignment implementation and scaffolding to train and evaluate a Deep Q-Network (DQN) agent on an Atari environment using Stable Baselines3 and Gymnasium. The goal is to train the agent to play an Atari game (Space Invaders) and then evaluate its performance by running the trained agent in the same environment.
@@ -129,10 +132,6 @@ Logging and Visualization
 - TensorBoard: you can configure Stable Baselines3 to log to TensorBoard for easy visualization of loss, reward, and other metrics.
 - Save checkpoints of models periodically during training (use callbacks).
 
-
-Video Playing
------------------------
-https://drive.google.com/file/d/1X3I3OAWVz4nVx5YXdEe3eLiK44Jp1-7J/view?usp=sharing
 
 Tips for Reproducibility
 ------------------------
