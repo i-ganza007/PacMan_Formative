@@ -1,14 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""
-Converted from Jupyter Notebook: notebook.ipynb
-Conversion Date: 2025-11-17T20:29:04.181Z
-"""
-
-# <a href="https://colab.research.google.com/github/i-ganza007/PacMan_Formative/blob/main/CNNPOLICY_2.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-
-
-
 !pip install -q --force-reinstall "numpy==1.26.4" "scipy<1.13" "scikit-learn<1.6" "matplotlib<3.9"
 
 !apt-get update -qq && apt-get install -y -qq swig cmake libopenmpi-dev zlib1g-dev
