@@ -1,0 +1,12 @@
+model_id,policy_type,learning_rate,gamma,batch_size,eps_start,eps_end,eps_decay,mean_reward,std_reward
+CNN_Model_1,CnnPolicy,0.00035,0.99,12,1.0,0.03,0.25,25.00,11.62
+CNN_Model_2,CnnPolicy,0.00075,0.97,20,1.0,0.07,0.15,190.50,156.34
+CNN_Model_3,CnnPolicy,0.00008,0.992,10,1.0,0.02,0.3,150.00,108.97
+CNN_Model_4,CnnPolicy,0.00045,0.985,18,1.0,0.04,0.2,137.00,33.48
+CNN_Model_5,CnnPolicy,0.00028,0.98,14,1.0,0.015,0.18,421.00,78.03
+MLP_Config_5,MlpPolicy,0.00028,0.98,14,1.0,0.015,0.18,180.00,0.00
+MLP_Config_6,MlpPolicy,0.00055,0.99,10,1.0,0.05,0.22,0.00,0.00
+MLP_Config_7,MlpPolicy,0.0009,0.975,12,1.0,0.08,0.12,0.00,0.00
+MLP_Config_8,MlpPolicy,0.00012,0.996,16,1.0,0.01,0.28,281.50,76.52
+MLP_Config_9,MlpPolicy,0.0004,0.988,15,1.0,0.035,0.19,0.00,0.00
+MLP_Config_10,MlpPolicy,0.00018,0.993,13,1.0,0.02,0.16,135.00,0.00
